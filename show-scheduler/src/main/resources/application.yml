@@ -1,0 +1,13 @@
+#spring:
+#  cloud:
+#    stream:
+#      kafka:
+#        binder:
+#          brokers: 172.23.238.198:9092
+#      bindings:
+#        updated-movie-event-in:
+#          destination: UpdatedMovieEvent
+#          contentType: application/json
+#        updated-movie-event-out:
+#          destination: UpdatedShowEvent
+#          contentType: application/json

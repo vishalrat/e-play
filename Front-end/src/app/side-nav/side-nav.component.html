@@ -1,0 +1,43 @@
+<!-- Invisible checkbox -->
+<!-- <div class="asides"> -->
+<input type='checkbox' id='toggle'>
+<!-- Menu -->
+
+<aside class='leftbar'>
+  <label for='toggle' class='exit'>X</label>
+  <h2 class="example-h2">Filters</h2>
+  <div class="flex-container">
+    <!-- <app-multiple-checkboxes (updatedListWithFulldata)="selectedPreferenceList($event)" [masterList]="genresList" [DisplayField]="'moviegenre'"
+      [title]="'Select Genre'" [height]="150"></app-multiple-checkboxes> -->
+    <form [formGroup]="form" (ngSubmit)="submit()">
+      <label formArrayName="genresList">
+        <div *ngFor="let genres of form.controls.genresList.controls; let i = index">
+          <mat-checkbox type="checkbox" [formControlName]="i"></mat-checkbox> {{genresList[i].moviegenre}}
+          <br>
+        </div>
+      </label>
+      <br>
+      <!-- <div *ngIf="!form.valid">At least one order must be selected</div> -->
+      <div>
+        <button mat-raised-button color="primary">Select genres</button>
+      </div>
+      <br>
+      <div>
+        <button type="reset" mat-raised-button color="primary">Reset Filters</button>
+      </div>
+
+    </form>
+
+  </div>
+</aside>
+
+<!-- Content -->
+<div class='content'>
+  <button matTooltip="Click for filters" matTooltipClass="example-tooltip-red">
+    <label for='toggle' class='button'></label>
+    <mat-icon>find_in_page</mat-icon>
+  </button>
+</div>
+<!-- </div> -->
+
+

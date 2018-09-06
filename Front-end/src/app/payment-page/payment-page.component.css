@@ -1,0 +1,85 @@
+.mat-grid-list {
+  margin-top: 10%;
+  margin-bottom: 5%;
+  
+}
+.mat-grid-tile{
+    border-radius: 20px;
+}
+.mat-card {
+  width: 200px;
+  height: 200px;
+  border-radius: 20px;
+}
+
+.render {
+  width: 200px;
+  height: 140px;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.add-button {
+  margin-left: 100px;
+}
+
+.summary {
+  color: rgb(3, 3, 3);
+  font-family: "Anton", sans-serif;
+  margin-bottom: 25px;
+  font-size: 30px;
+  position: static;
+}
+
+.details-display {
+  margin:auto;
+  color: black;
+  overflow:hidden
+}
+
+.booking-button {
+  margin-bottom: 60%;
+}
+
+#text {
+    font-size: 14px;
+    
+}
+
+#price {
+    font-size: 14px;
+    margin-top: -30px;
+    margin-left: 150px;
+}
+
+/* .payment{
+  margin-top:0;
+  background: url("http://getwallpapers.com/wallpaper/full/9/0/9/994206-free-large-background-images-2560x1440.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+} */
+
+hr {
+  border: none;
+  height: 1px;
+  /* Set the hr color */
+  color: #333; /* old IE */
+  background-color: #C0C0C0; /* Modern Browsers */
+}
+.test{
+  border: #333;
+}
+.figure{
+  background: black
+}
+
+.scroll-on-content-add{
+  position:absolute;
+  top: 50px;
+  left:0px;
+  right:0px;
+  bottom:0px;
+  overflow-y:scroll;        
+}

@@ -1,0 +1,319 @@
+<header class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top">
+  <div class="container" *ngIf="loggedIn();else elseBlock">
+    <button class="navbar-toggler" data-target="#navbarCollapse" data-toggle="collapse" type="button">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" id="heading" matTooltip="Home" routerLink="/home">E-PLAY</a>
+    <!-- navbar -->
+    <nav class="navbar-collapse collapse" id="navbarCollapse">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a href="#" class="nav-link"></a>
+        </li>
+        <li class="nav-item">
+          <button class="btn btn-info" mat-raised-button [matMenuTriggerFor]="menu">Filters</button>
+          <mat-menu #menu="matMenu">
+            <form [formGroup]="form" (ngSubmit)="submit()" class="menuToggle">
+              <label formArrayName="genresList">
+                <div *ngFor="let genres of form.controls.genresList.controls; let i = index">
+                  <mat-checkbox type="checkbox" [formControlName]="i" (click)="$event.stopPropagation()"></mat-checkbox> {{genresList[i].moviegenre}}
+                </div>
+              </label>
+              <br>
+
+              <div>
+                <button class="btn btn-info" mat-raised-button (click)="scroll()">Select</button>
+              </div>
+              <br>
+              <div>
+                <button class="btn btn-info" type="reset" mat-raised-button (click)="reset()">Reset</button>
+              </div>
+            </form>
+          </mat-menu>
+        </li>
+        <!-- <li class="nav-item">
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" [matMenuTriggerFor]="menu" id="dropdownMenuButton" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              Filters
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              Select genre
+              <form [formGroup]="form" (ngSubmit)="submit()" class="menuToggle">
+                <label formArrayName="genresList">
+                  <div *ngFor="let genres of form.controls.genresList.controls; let i = index">
+                    <a class="dropdown-item">
+                      <mat-checkbox type="checkbox" [formControlName]="i" (click)="$event.stopPropagation()"> </mat-checkbox>{{genresList[i].moviegenre}}
+                    </a>
+                  </div>
+                </label>
+                <a class="dropdown-item">
+                  <button mat-raised-button color="primary">Select</button>
+                </a>
+                <a class="dropdown-item">
+                  <button type="reset" mat-raised-button color="primary">Reset</button>
+                </a>
+              </form>
+            </div>
+          </div>
+        </li>  -->
+        <li class="nav-item">
+          <a href="#" class="nav-link"></a>
+        </li>
+        <li class="nav-item active">
+          <a routerLink="/changeCity" matTooltip="Change your city" class="nav-link">Change City</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link"></a>
+        </li>
+      </ul>
+
+      <ul class="navbar-nav ">
+        <li class="nav-item">
+          <form class="form-inline">
+            <input type="text" class="form-control" id="searchbar" [(ngModel)]="omdbSearchTitle" [ngModelOptions]="{standalone: true}">
+          </form>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link"></a>
+        </li>
+        <li class="nav-item">
+          <button class="mat-raised-button btn-info" matTooltip="Click to search movies" (click)="onSearch()" routerLink="/search">Search</button>
+        </li>
+      </ul>
+
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a href="#" class="nav-link"></a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link"></a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link"></a>
+        </li>
+        <li class="nav-item">
+          
+            <button class="btn btn-danger" mat-button mat-raised-button routerLink="/createEvent" routerLinkActive="active">Create Event</button>
+          
+        </li>
+        <!-- <li class="nav-item"> -->
+        <button class="mat-raised-button btn-info" matTooltip="Click to quickly Signup" routerLink="/userRegistration" routerLinkActive="active"
+          *ngIf="!authenticationService.loggedIn()">Login/SignUp</button>
+        <li class="nav-item">
+          <a href="#" class="nav-link"></a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link"></a>
+        </li>
+        <li class="nav-item dropdown">
+
+          <mat-icon class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" *ngIf="authenticationService.loggedIn()"
+            style="margin-right: 50px">person</mat-icon>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="profile">Event History</a>
+            <a class="dropdown-item" href="bookingHistory">Booking History</a>
+            <a class="dropdown-item" href="#"> Accout & Settings</a>
+            <a class="dropdown-item" href="#"> Help</a>
+            <!-- <div class="dropdown-divider"></div> -->
+            <a class="dropdown-item" href="home" (click)="authenticationService.logout()" *ngIf="authenticationService.loggedIn()">Not {{User}}? Logout</a>
+          </div>
+          <!-- </li> -->
+        </li>
+        <!-- <button mat-raised-button matTooltip="Click to quickly Signup" routerLink="/userRegistration" routerLinkActive="active" *ngIf="!authenticationService.loggedIn()">Login/SignUp</button>
+          
+              <button mat-raised-button (click)="authenticationService.logout()" *ngIf="authenticationService.loggedIn()">Logout</button>
+          
+ -->
+
+
+        <!-- </li> -->
+        <li class="nav-item">
+          <a href="#" class="nav-link"></a>
+        </li>
+        <li class="nav-item">
+          <!-- <button matTooltip="Click to create an Event" routerLink="/createEvent" routerLinkActive="active" matTooltipClass="example-tooltip-red"
+            aria-label="Button that shows a red tooltip" class="example-button" mat-raised-button>Create Event</button> -->
+        </li>
+
+        <!-- <li class="dropdown nav-item">
+          <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown" id="usercaret">
+            <span>Create</span>
+          </a>
+          <ul class="dropdown-menu" id="userDrop">
+            <li>
+              <button mat-raised-button matTooltip="Click to create an Event" routerLink="/createEvent" routerLinkActive="active" matTooltipClass="example-tooltip-red"
+                  aria-label="Button that shows a red tooltip" class="example-button" mat-raised-button>Create Event</button>
+               <a matTooltip="Click to create an Event" [routerLink]="['/createEvent']" class="dropdown-item">Create Event</a>
+            </li>
+            <li>
+            </li>
+
+          </ul>
+        </li> -->
+
+      </ul>
+
+
+    </nav>
+    <!-- navbar -->
+
+  </div>
+
+
+  <ng-template #elseBlock>
+    <div class="container">
+      <button class="navbar-toggler" data-target="#navbarCollapse" data-toggle="collapse" type="button">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" id="heading" matTooltip="Home" routerLink="/home">E-PLAY</a>
+      <!-- navbar -->
+      <nav class="navbar-collapse collapse" id="navbarCollapse">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a href="#" class="nav-link"></a>
+          </li>
+          <li class="nav-item">
+            <button class="btn btn-info" mat-raised-button [matMenuTriggerFor]="menu">Filters</button>
+            <mat-menu #menu="matMenu">
+              <form [formGroup]="form" (ngSubmit)="submit()" class="menuToggle">
+                <label formArrayName="genresList">
+                  <div *ngFor="let genres of form.controls.genresList.controls; let i = index">
+                    <mat-checkbox type="checkbox" [formControlName]="i" (click)="$event.stopPropagation()"></mat-checkbox> {{genresList[i].moviegenre}}
+                  </div>
+                </label>
+                <br>
+
+                <div>
+                  <button class="btn btn-info" (click)="scroll()"mat-raised-button>Select</button>
+                </div>
+                <br>
+                <div>
+                  <button class="btn btn-info" type="reset" mat-raised-button (click)="reset()">Reset</button>
+                </div>
+              </form>
+            </mat-menu>
+          </li>
+          <!-- <li class="nav-item">
+            <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" [matMenuTriggerFor]="menu" id="dropdownMenuButton" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Filters
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                Select genre
+                <form [formGroup]="form" (ngSubmit)="submit()" class="menuToggle">
+                  <label formArrayName="genresList">
+                    <div *ngFor="let genres of form.controls.genresList.controls; let i = index">
+                      <a class="dropdown-item">
+                        <mat-checkbox type="checkbox" [formControlName]="i" (click)="$event.stopPropagation()"> </mat-checkbox>{{genresList[i].moviegenre}}
+                      </a>
+                    </div>
+                  </label>
+                  <a class="dropdown-item">
+                    <button mat-raised-button color="primary">Select</button>
+                  </a>
+                  <a class="dropdown-item">
+                    <button type="reset" mat-raised-button color="primary">Reset</button>
+                  </a>
+                </form>
+              </div>
+            </div>
+          </li>  -->
+          <li class="nav-item">
+            <a href="#" class="nav-link"></a>
+          </li>
+          <li class="nav-item active">
+            <a routerLink="/changeCity" matTooltip="Change your city" class="nav-link">Change City</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link"></a>
+          </li>
+        </ul>
+
+        <ul class="navbar-nav ">
+          <li class="nav-item">
+            <form class="form-inline">
+              <input type="text" class="form-control" id="searchbar" [(ngModel)]="omdbSearchTitle" [ngModelOptions]="{standalone: true}">
+            </form>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link"></a>
+          </li>
+          <li class="nav-item">
+            <button class="mat-raised-button btn-info" matTooltip="Click to search movies" (click)="onSearch()" routerLink="/search">Search</button>
+          </li>
+        </ul>
+
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a href="#" class="nav-link"></a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link"></a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link"></a>
+          </li>
+          <li>
+
+          </li>
+          <!-- <li class="nav-item"> -->
+          <button class="mat-raised-button btn-info" matTooltip="Click to quickly Signup" routerLink="/userRegistration" routerLinkActive="active"
+            *ngIf="!authenticationService.loggedIn()">Login/SignUp</button>
+
+          <li class="nav-item dropdown">
+
+            <mat-icon class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" *ngIf="authenticationService.loggedIn()"
+              style="margin-right: 50px">person</mat-icon>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="profile">Event History</a>
+              <a class="dropdown-item" href="profile">Booking History</a>
+              <a class="dropdown-item" href="#"> Accout & Settings</a>
+              <a class="dropdown-item" href="#"> Help</a>
+              <!-- <div class="dropdown-divider"></div> -->
+              <a class="dropdown-item" href="home" (click)="authenticationService.logout()" *ngIf="authenticationService.loggedIn()">Not {{User}}? Logout</a>
+            </div>
+            <!-- </li> -->
+          </li>
+          <!-- <button mat-raised-button matTooltip="Click to quickly Signup" routerLink="/userRegistration" routerLinkActive="active" *ngIf="!authenticationService.loggedIn()">Login/SignUp</button>
+            
+                <button mat-raised-button (click)="authenticationService.logout()" *ngIf="authenticationService.loggedIn()">Logout</button>
+            
+   -->
+
+
+          <!-- </li> -->
+          <li class="nav-item">
+            <a href="#" class="nav-link"></a>
+          </li>
+          <li class="nav-item">
+            <!-- <button matTooltip="Click to create an Event" routerLink="/createEvent" routerLinkActive="active" matTooltipClass="example-tooltip-red"
+              aria-label="Button that shows a red tooltip" class="example-button" mat-raised-button>Create Event</button> -->
+          </li>
+
+          <!-- <li class="dropdown nav-item">
+            <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown" id="usercaret">
+              <span>Create</span>
+            </a>
+            <ul class="dropdown-menu" id="userDrop">
+              <li>
+                <button mat-raised-button matTooltip="Click to create an Event" routerLink="/createEvent" routerLinkActive="active" matTooltipClass="example-tooltip-red"
+                    aria-label="Button that shows a red tooltip" class="example-button" mat-raised-button>Create Event</button>
+                 <a matTooltip="Click to create an Event" [routerLink]="['/createEvent']" class="dropdown-item">Create Event</a>
+              </li>
+              <li>
+              </li>
+  
+            </ul>
+          </li> -->
+
+        </ul>
+
+
+      </nav>
+      <!-- navbar -->
+
+    </div>
+  </ng-template>
+</header>

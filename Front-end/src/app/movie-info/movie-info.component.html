@@ -1,0 +1,31 @@
+<app-nav-bar></app-nav-bar>
+<div class="test">
+    <div class="poster-container">
+        <!--"https://picsum.photos/1300/300?image=992"-->
+        <img src={{movies.backGroundPoster}} alt="Sorry movie not available" />
+        <h2>{{movies.name}}</h2>
+    </div>
+    <div *ngIf="movieDescription(); else filler" class="description">
+        <h4>Synopsis</h4>
+        <div class="menu">
+            {{movieRecommend.description}}
+        </div>
+    </div>
+    <div *ngIf="recommendedMovie!=null" class="poster-container">
+        <img src={{recommendedMovies.poster}} alt="Sorry movie not available" />
+        <h2>{{recommendedMovies.name}}</h2>
+    </div>
+    <div *ngIf="recommendedMovie!=null" class="description">
+        <h4>Synopsis</h4>
+        <div class="menu">
+            {{movieRecommend.description}}
+        </div>
+    </div>
+    <ng-template #filler>
+        <h4>What's in a description...we want it a surprise for YOU!</h4>
+    </ng-template>
+    <div>
+        <!-- display the list -->
+        <app-movie-theatre-list></app-movie-theatre-list>
+    </div>
+</div>

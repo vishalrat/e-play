@@ -1,0 +1,84 @@
+<app-nav-bar></app-nav-bar>
+<div class="otherevent">
+  <div class="jumbotron">
+    <div class="medium-list">
+      <div class="list-viewer-wrapper">
+        <div class="list-header-title">Ticketed Event</div>
+        <form [formGroup]="otherTicketedEventForm">
+        <div class="form-container">
+          <mat-form-field>
+            <input matInput formControlName="name" placeholder="Event Name" [(ngModel)]="ticketedEvent.name" required>
+          </mat-form-field>
+
+          <!-- <mat-form-field>
+          <input matInput [matDatepicker]="picker" placeholder="Choose a starting date" [(ngModel)]="ticketedEvent.date" required>
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-fieldng> -->
+
+
+          <!-- <mat-form-field>
+          <input matInput placeholder="Time" [(ngModel)]="ticketedEvent.time">
+        </mat-form-field> -->
+
+
+          <mat-form-field>
+            <input formControlName="city" matInput placeholder="City" [(ngModel)]="ticketedEvent.city" required>
+          </mat-form-field>
+
+          <mat-form-field>
+            <input formControlName="date" matInput placeholder="Choose a starting date" [(ngModel)]="ticketedEvent.date" [owlDateTimeTrigger]="picker" [owlDateTime]="picker" required>
+            <owl-date-time #picker></owl-date-time>
+          </mat-form-field>
+
+          <!-- <mat-form-field>
+          <input matInput placeholder="Location" [(ngModel)]="ticketedEvent.location">
+        </mat-form-field> -->
+  
+          <mat-form-field>
+            <mat-select placeholder="Select Type">
+              <mat-option *ngFor="let type of types" [value]="type" (click)="setType(type)" >
+                {{type}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput formControlName="cardPoster" placeholder="Card Poster" [(ngModel)]="ticketedEvent.cardPoster" required>
+          </mat-form-field>
+
+          <mat-form-field>
+            <input matInput formControlName="backGroundPoster" placeholder="Background Poster" [(ngModel)]="ticketedEvent.backGroundPoster" required>
+          </mat-form-field>
+
+          <!-- <mat-form-field>
+          <input matInput placeholder="Type" [(ngModel)]="ticketedEvent.type">
+        </mat-form-field> -->
+
+          <mat-form-field>
+            <input matInput formControlName="capacity" placeholder="Capacity" [(ngModel)]="ticketedEvent.capacity" required>
+          </mat-form-field>
+
+          <mat-form-field>
+            <textarea matInput formControlName="description" placeholder="Description" [(ngModel)]="ticketedEvent.description" required></textarea>
+          </mat-form-field>
+
+          <mat-form-field>
+            <input matInput formControlName="price" placeholder="Price" [(ngModel)]="ticketedEvent.price" required>
+          </mat-form-field>
+
+          <!-- <mat-form-field>
+          <input matInput placeholder="Performers" [(ngModel)]="ticketedEvent.performers">
+        </mat-form-field> -->
+
+          <!-- <button type="submit" class="example-button" name="button" class="btn btn-success" (click)="submitTicketedEvent()">Submit</button> -->
+
+        </div>
+        </form>
+        <p align="center">
+          <button type="submit" class="example-button" name="button" class="btn btn-secondary" [disabled]="!otherTicketedEventForm.valid" (click)="submitTicketedEvent()" routerLinkActive="active"
+            routerLink="/home">Create Event</button>
+        </p>
+      </div>
+      <div>
+      </div>
+    </div>

@@ -1,0 +1,17 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Application-wide Styles */
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import "~ng-pick-datetime/assets/style/picker.min.css";
+
+body {
+    -webkit-font-smoothing :antialiased;
+    text-rendering: optimizeLegibility;
+    font-family: 'Acme', sans-serif;
+ }
+
+ html,body {
+    /* background-image: url("http://getwallpapers.com/wallpaper/full/c/b/8/507884.jpg"); */
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+ }

@@ -1,0 +1,24 @@
+footer {
+    position: fixed sticky;
+    /* right: 0;
+    bottom: 0;
+    left: 0;*/
+    padding: 2rem; 
+    background: #333;
+    color: #eee;
+    font-size: 11px;
+  /* padding-bottom: 0px; */
+    /* padding: 20px; */
+    /* background-color: #efefef;
+    text-align: center; */
+  
+    background: -webkit-linear-gradient(bottom,  #5e635e 0,#0e0e0e 100%); /* Chrome10+,Safari5.1+ */
+  }
+  h6{
+    font-family: "Anton", sans-serif;
+  /* font-family: "Lobster", cursive; */
+  }
+  p,a{
+    font-size: 1.2em;
+     /* font-family: "Lobster", cursive;  */
+  }

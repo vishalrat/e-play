@@ -1,0 +1,56 @@
+.poster-container {
+  width: 100%;
+  background-color: rgb(102, 102, 102);
+  height: 300px;
+  align-content: center;
+  position: relative;
+  margin-top: 50px;
+}
+.test {
+  margin-bottom: 5%;
+  width: 100%;
+  overflow: hidden;
+}
+.poster-container h2 {
+  position: absolute;
+  top: 200px;
+  left: 20px;
+  width: 100%;
+  color: antiquewhite;
+}
+
+.menu {
+  margin-left: 20px;
+  margin-top: 5px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  background-color: transparent;
+  margin-right: 20px;
+  color: black;
+}
+
+
+.poster-container img {
+  width: 100%;
+  height: 100%;
+}
+
+.description {
+  margin-left: 20px;
+  margin-top: 5px;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  background-color: transparent;
+  margin-right: 20px;
+  padding-left: 1%;
+}
+
+h4 {
+  text-align: center;
+  background-color: transparent;
+  margin-left: 20px;
+  margin-top: 10px;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-weight: bold;
+  margin-right: 20px;
+  padding-left: 1%;
+  color: black;
+}

@@ -1,0 +1,97 @@
+<app-nav-bar></app-nav-bar>
+<!-- <div class="example-container">
+
+
+ <mat-form-field>
+   <input matInput placeholder="Username" [(ngModel)]="userModel.userName">
+ </mat-form-field>
+
+ <mat-form-field>
+   <input matInput placeholder="Enter your password" [type]="hide ? 'password' : 'text'" [(ngModel)]="userModel.password">
+   <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+ </mat-form-field>
+
+ <mat-form-field>
+   <textarea matInput placeholder="FullName" [(ngModel)]="userModel.fullName"></textarea>
+   
+ </mat-form-field>
+ 
+
+
+ <mat-form-field>
+   <textarea matInput placeholder="Contact Number" [(ngModel)]="userModel.contactNo"></textarea>
+ </mat-form-field>
+ 
+
+ <mat-form-field>
+   <textarea matInput placeholder="Email id" [(ngModel)]="userModel.email"></textarea>
+  
+ </mat-form-field>
+ 
+ <mat-form-field>
+   <textarea matInput placeholder="City" [(ngModel)]="userModel.city"></textarea>
+   
+ </mat-form-field>
+
+ <mat-form-field>
+   <textarea matInput placeholder="Gender" [(ngModel)]="userModel.gender"></textarea>
+   
+ </mat-form-field>
+  <button type="submit" class="example-button" name="button" class="btn btn-success" (click)="onSubmit()">Submit</button> -->
+
+
+
+<!--Rahul-->
+<div class="userregister">
+  <div class="jumbotron">
+    <div class="medium-list">
+      <div class="list-viewer-wrapper">
+        <div class="list-header-title">Register</div>
+
+        <form [formGroup]="registerForm">
+          <div class="form-container">
+            <mat-form-field>
+              <input id="userName" matInput formControlName="userName" [(ngModel)]="user.userName" placeholder="Username" #message/>
+              <div *ngIf="userName.dirty && userName.errors" class="error">
+                <div *ngIf="userName.errors.required" class="validation_message">
+                  Username required.
+                </div>
+                <div *ngIf="userName.errors.userNameExists" class="validation_message">
+                  Username already exists.
+                </div>
+              </div>
+            </mat-form-field>
+
+          
+            <mat-form-field>
+              <input id="email" matInput formControlName="email" [(ngModel)]="user.email" placeholder="Email" #action />
+              <div *ngIf="email.dirty && email.errors" class="error">
+                <div *ngIf="email.errors.required" class="validation_message">
+                  Email required.
+                </div>
+                <div *ngIf="email.errors.email" class="validation_message">
+                  Email not valid.
+                </div>
+                <div *ngIf="email.errors.emailExists" class="validation_message">
+                  Email already exists.
+                </div>
+              </div>
+            </mat-form-field>
+
+            <mat-form-field>
+              <input id="password" matInput formControlName="password" [(ngModel)]="user.password" placeholder="Password" [type]="hide ? 'password':'text'"
+              />
+              <mat-icon matSuffix (click)="hide = !hide">
+                {{hide ? 'visibility' : 'visibility_off'}}
+              </mat-icon>
+            </mat-form-field>
+
+            <button mat-button type="onSubmit" (click)="openSnackBar(message.value, action.value)" class="mat-raised-button" 
+              routerLink="/userLogin" routerLinkActive="active" [disabled]="!registerForm.valid" (click)="onSubmit()">Register</button>
+            <button mat-button routerLink="/userLogin" routerLinkActive="active" class="btn btn-info" style="margin: auto;  margin-top: 10px !important; ">Login</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

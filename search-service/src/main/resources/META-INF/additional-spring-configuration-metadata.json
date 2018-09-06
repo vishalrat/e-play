@@ -1,0 +1,82 @@
+{"properties": [
+  {
+    "name": "spring.logging.file",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.logging.file'"
+  },
+  {
+    "name": "spring.logging.pattern.console",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.logging.pattern.console'"
+  },
+  {
+    "name": "spring.logging.pattern.file",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.logging.pattern.file'"
+  },
+  {
+    "name": "spring.logging.level.org.springframework.web",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.logging.level.org.springframework.web'"
+  },
+  {
+    "name": "spring.logging.level.com.stackroute.controllers",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.logging.level.com.stackroute.controllers'"
+  },
+  {
+    "name": "spring.logging.level.org.hibernate",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.logging.level.org.hibernate'"
+  },
+  {
+    "name": "dockerspring.data.mongodb.uri",
+    "type": "java.lang.String",
+    "description": "A description for 'dockerspring.data.mongodb.uri'"
+  },
+  {
+    "name": "spring.logging.level.mongodb",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.logging.level.mongodb'"
+  },
+  {
+    "name": "spring.logging.level.database",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.logging.level.database'"
+  },
+  {
+    "name": "spring.logging.level.database",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.logging.level.database'"
+  },
+  {
+    "name": "spring.logging.level.port",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.logging.level.port'"
+  },
+  {
+    "name": "spring.logging.level.host",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.logging.level.host'"
+  },
+  {
+    "name": "spring.logging.mongodb.database",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.logging.mongodb.database'"
+  },
+  {
+    "name": "spring.logging.mongodb.port",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.logging.mongodb.port'"
+  },
+  {
+    "name": "spring.logging.mongodb.host",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.logging.mongodb.host'"
+  },
+  {
+    "name": "spring.logging.mongodb.host",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.logging.mongodb.host'"
+  }
+]}

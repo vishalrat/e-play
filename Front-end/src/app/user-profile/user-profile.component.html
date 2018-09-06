@@ -1,0 +1,72 @@
+<app-nav-bar></app-nav-bar>
+<h2 style="margin-top: 100px">MOVIES</h2>
+<mat-grid-list cols="12" rowHeight="100px">
+    <div *ngIf=" movieList[0]; else elseBlock">
+        <div *ngFor="let movie of movieList;let i=index">
+            <mat-grid-tile colspan="4" rowspan="5">
+                <mat-card class="render1">
+                 <img class="render" mat-card-image src="{{movie.cardPoster}}" alt="movie poster">
+                  <br> {{movie.name}}
+                    <br>Release Date: {{movie.releaseDate}}
+                    <br>{{yourData.movieEvent[i].city}} | {{theatreList[i].theatreName}} | {{theatreList[i].theatreLocation}}
+                    <br>Duration: {{yourData.movieEvent[i].week}} week
+                    <br>Shows: {{yourData.movieEvent[i].showTimes}}
+                </mat-card>
+            </mat-grid-tile>
+        </div>
+    </div>
+    <ng-template #elseBlock>
+        <h4 style="margin-top: 75px">No result found!!</h4>
+    </ng-template>
+</mat-grid-list>
+
+
+<h2 style="margin-top: 100px">EVENTS</h2>
+<mat-grid-list cols="12" rowHeight="100px">
+    <div *ngIf="yourData.ticketedEvent; else elseBlock">
+        <div *ngFor="let ticketedEvent of yourData.ticketedEvent;let i=index">
+            <mat-grid-tile colspan="4" rowspan="5">
+                <mat-card class="render1">
+                    <img class="render" mat-card-image src="{{ticketedEvent.cardPoster}}" alt="movie poster">
+                    <mat-card-actions>
+                        <h6 style="font-family: 'Times New Roman', Times, serif"> {{ticketedEvent.name}}</h6>
+                        {{ticketedEvent.city}}
+                        {{ticketedEvent.localDate}}
+                        
+                        <!-- <button class="btn btn-secondary" mat-button mat-raised-button routerLink="/movieinfo" (click)="goMoviePage(movie)">View and Book</button> -->
+                    </mat-card-actions>
+                </mat-card>
+            </mat-grid-tile>
+        </div>
+    </div>
+    <ng-template #elseBlock>
+        <h4 style="margin-top: 75px">No result found!!</h4>
+    </ng-template>
+</mat-grid-list>
+
+
+
+
+
+<h2 style="margin-top: 100px">RSVP EVENTS</h2>
+<mat-grid-list cols="12" rowHeight="100px">
+        <div *ngIf="yourData.rsvpEvents; else elseBlock">
+
+    <div *ngFor="let RSVPEvent of yourData.rsvpEvents;let i=index">
+        <mat-grid-tile colspan="4" rowspan="5">
+            <mat-card class="render1">
+            <img class="render" mat-card-image src="{{RSVPEvent.poster}}" alt="movie poster">
+            <br>{{RSVPEvent.name}}
+                <br> {{RSVPEvent.startDate| date}} 
+                {{RSVPEvent.startDate| date:"HH:mm"}} 
+                <mat-card-actions>
+                    <button class="btn btn-secondary" mat-button mat-raised-button  routerLinkActive="active" (click)="onClick(RSVPEvent.id)">View</button>
+                </mat-card-actions>
+            </mat-card>
+        </mat-grid-tile>
+    </div>
+</div>
+<ng-template #elseBlock>
+    <h4 style="margin-top: 75px">No result found!!</h4>
+</ng-template>
+</mat-grid-list>

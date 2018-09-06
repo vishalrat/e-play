@@ -1,0 +1,49 @@
+#
+#logging:
+# file: logs/dev_app.log
+# pattern:
+#   console: "%d %-5level %logger : %msg%n"
+#   file: "%d %-5level [%thread] %logger : %msg%n"
+# level:
+#   org.springframework.web: DEBUG
+#   com.stackroute.movieapp.controller: DEBUG
+#   org.hibernate: DEBUG
+#   
+#   
+#spring:
+#  data:
+#      mongodb:
+#         uri: mongodb://0.0.0.0:27000/ticket
+#  cloud:
+#    stream:
+#      kafka:
+#        binder:
+#          brokers: 172.23.238.170:9092
+#      bindings:
+#        movie-event-in:
+#          destination: MovieEvent
+#          contentType: application/json
+#        show-in:
+#          destination: Show
+#          contentType: application/json
+#        ticketed-event-in:
+#          destination: TicketedEvent
+#          contentType: application/json
+#        movie-in:
+#          destination: Movie
+#          contentType: application/json
+#        theatre-in:
+#          destination: Theatre
+#          contentType: application/json
+#        movie-event-out:
+#          destination: MovieEvent
+#          contentType: application/json
+#        ticketed-event-out:
+#          destination: TicketedEvent
+#          contentType: application/json
+#        movie-out:
+#          destination: Movie
+#          contentType: application/json
+#        theatre-out:
+#          destination: Theatre
+#          contentType: application/json

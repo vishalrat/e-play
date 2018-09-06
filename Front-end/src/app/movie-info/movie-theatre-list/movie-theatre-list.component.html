@@ -1,0 +1,42 @@
+<div *ngIf="theatreList; else elseBlock">
+    <div class="theatre-container" *ngFor="let theatre of movie.theatres">
+        <div class="theatre-name">
+            <a mat-button routerLink=".">{{theatre.theatreName}}</a>
+        </div>
+        <div class="show-time">
+           <ng-container *ngFor="let show of theatre.shows">   
+                <button *ngIf="show.status; else disableButton" routerLink="/theatreLayout"
+                 mat-stroked-button color="primary" (click)="sendShowId(show.showId)">
+                        {{show.date}} || {{show.startTime}}
+                </button>
+                <ng-template #disableButton>
+                    <button mat-stroked-button disabled>
+                        {{show.date}} || {{show.startTime}}
+                    </button>
+                </ng-template>
+            </ng-container>
+        </div>
+    </div>
+</div>
+
+<ng-template #elseBlock>
+    <div class="theatre-container" *ngFor="let theatre of movieRecommend.theatres">
+        <div class="theatre-name">
+            <a mat-button routerLink=".">{{theatre.theatreName}}</a>
+        </div>
+        <div class="show-time">
+           <ng-container *ngFor="let show of theatre.shows">   
+                <button *ngIf="show.status; else disableButton" routerLink="/theatreLayout"
+                 mat-stroked-button color="primary" (click)="sendShowId(show.showId)">
+                        {{show.date}} || {{show.startTime}}
+                </button>
+                <ng-template #disableButton>
+                    <button mat-stroked-button disabled>
+                        {{show.date}} || {{show.startTime}}
+                    </button>
+                </ng-template>
+            </ng-container>
+        </div>
+    </div>
+
+</ng-template>

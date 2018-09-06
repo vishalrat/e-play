@@ -1,0 +1,389 @@
+version: '2.1'
+volumes:
+   prometheus_data: {}
+   grafana_data: {}
+
+services:
+  eureka-server:
+    build: eureka-server/
+    #mem_limit: 2g
+    depends_on:
+      config-service:
+        condition: service_healthy
+    restart: always
+    network_mode: "host"
+    image: eureka-service
+    hostname: localhost
+    ports:
+      - 9089:9089
+    healthcheck:
+      test: "exit 0"
+
+  config-service:
+    build: config-service/
+    restart: always
+    #mem_limit: 2g
+    network_mode: "host"
+    image: config-service
+    hostname: localhost
+    ports:
+      - 8891:8891
+    healthcheck:
+      test: "exit 0"
+
+  api-gateway:
+    build: zuul-apigateway/
+    #mem_limit: 2g 
+    depends_on:
+      config-service:
+        condition: service_healthy
+      eureka-server:
+        condition: service_healthy
+    restart: always
+    network_mode: "host"
+    image: zuul-service
+    hostname: localhost
+    ports:
+      - 8092:8092
+    healthcheck:
+      test: "exit 0"
+
+ 
+  zookeeper:
+    image: wurstmeister/zookeeper
+    #mem_limit: 2g
+    ports:
+      - "2181:2181"
+    network_mode: "host"
+    hostname: localhost
+    restart: always
+    healthcheck:
+      test: "exit 0"
+
+  kafka:
+    image: wurstmeister/kafka
+    #mem_limit: 2g
+    ports:
+      - "9092:9092"
+    environment:
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:9092
+      KAFKA_LISTENERS: PLAINTEXT://0.0.0.0:9092
+      KAFKA_ZOOKEEPER_CONNECT: localhost:2181
+    network_mode: "host"
+    hostname: localhost
+    depends_on:
+      - zookeeper
+    restart: always
+    healthcheck:
+      test: "exit 0"
+      
+  mongodb:
+    image: mongo
+    container_name: "mongodb"
+    #mem_limit: 100m
+    volumes:
+      - /data/mongo/data/db:/data/db
+    ports:
+      - 27000:27017
+    restart: always
+    healthcheck:
+      test: "exit 0"
+
+  redis:
+    image: redis:latest
+    container_name: "redis"
+    command: redis-server --appendonly yes
+    #mem_limit: 2g
+    volumes:
+      - /data/redis:/data
+    ports:
+      - 6379:6379
+    restart: always
+    healthcheck:
+      test: "exit 0"
+   
+  neo4j:
+   image: neo4j:latest
+   #mem_limit: 2g
+   ports:
+     - "7474:7474"
+     - "7687:7687"
+   restart: always
+   environment:
+     - NEO4J_AUTH=neo4j/12345
+     - NEO4J_dbms_security_procedures_unrestricted=apoc.*
+     - NEO4J_apoc_import_file_enabled=true
+     - NEO4J_dbms_shell_enabled=true
+   volumes:
+     - /data/neo4j/plugins:/plugins
+     - /data/neo4j/data:/data
+     - /data/noe4j/import:/import
+   healthcheck:
+      test: "exit 0"
+  prometheus:
+    image: prom/prometheus
+    ports:
+     - "9090:9090"
+    mem_limit: 1g
+    volumes:
+     - ./prometheus.yml:/etc/prometheus/prometheus.yml
+     - ./prometheus/:/etc/prometheus/
+     - prometheus_data:/prometheus
+    command:
+     - '--config.file=/etc/prometheus/prometheus.yml'
+     - '--storage.tsdb.path=/prometheus'
+     - '--web.console.libraries=/etc/prometheus/console_libraries'
+     - '--web.console.templates=/etc/prometheus/consoles'
+     - '--storage.tsdb.retention=200h'
+     - '--web.enable-lifecycle'
+    container_name: prometheus
+    healthcheck:
+      test: "exit 0"
+
+  grafana:
+    ports:
+      - "3000:3000"
+    mem_limit: 1g
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - ./grafana/datasources:/etc/grafana/datasources
+      - ./grafana/dashboards:/etc/grafana/dashboards
+      - ./grafana/setup.sh:/setup.sh
+    command: ./setup.sh
+    environment:
+      - GF_SECURITY_ADMIN_USER=${ADMIN_USER:-admin}
+      - GF_SECURITY_ADMIN_PASSWORD=${ADMIN_PASSWORD:-admin}
+      - GF_USERS_ALLOW_SIGN_UP=false
+    links:
+      - prometheus
+    image: grafana/grafana
+    container_name: grafana
+    healthcheck:
+      test: "exit 0"
+        
+
+
+        
+  downstream-service:
+    build: downstream-service/
+    image: downstream-service
+    #mem_limit: 2g 
+    restart: always
+    network_mode: "host"
+    hostname: localhost
+    ports:
+      - 8095:8095
+    depends_on:
+      config-service:
+        condition: service_healthy
+      eureka-server:
+        condition: service_healthy
+      mongodb:
+        condition: service_healthy
+      kafka:
+        condition: service_healthy
+    healthcheck:
+      test: "exit 0"
+    
+
+      
+  upstream-service:
+    build: upstream-service/
+    image: upstream-service
+    #mem_limit: 2g 
+    restart: always
+    network_mode: "host"
+    hostname: localhost
+    ports:
+      - 8094:8094
+    depends_on:
+      config-service:
+        condition: service_healthy
+      eureka-server:
+        condition: service_healthy
+      mongodb:
+        condition: service_healthy
+      kafka:
+        condition: service_healthy
+    healthcheck:
+      test: "exit 0"
+
+  rsvp:
+    build: rsvp-service/
+    image: rsvp-service
+    #mem_limit: 2g
+    restart: always
+    network_mode: "host"
+    hostname: localhost
+    ports:
+      - 8097:8097
+    depends_on:
+      config-service:
+        condition: service_healthy
+      eureka-server:
+        condition: service_healthy
+      mongodb:
+        condition: service_healthy
+      kafka:
+        condition: service_healthy
+    healthcheck:
+      test: "exit 0"
+
+  search:
+    build: search-service/
+    image: search-service
+    #mem_limit: 2g
+    restart: always
+    network_mode: "host"
+    hostname: localhost
+    ports:
+      - 8093:8093
+    depends_on:
+      config-service:
+        condition: service_healthy
+      eureka-server:
+        condition: service_healthy
+      mongodb:
+        condition: service_healthy
+      kafka:
+        condition: service_healthy
+    healthcheck:
+      test: "exit 0"
+
+  ticket:
+    build: ticket-service/
+    image: ticket-service
+    #mem_limit: 2g
+    restart: always
+    network_mode: "host"
+    hostname: localhost
+    ports:
+      - 8091:8091
+    depends_on:
+      config-service:
+        condition: service_healthy
+      eureka-server:
+        condition: service_healthy
+      mongodb:
+        condition: service_healthy
+      kafka:
+        condition: service_healthy
+    healthcheck:
+      test: "exit 0"
+
+  user-registration:
+    build: user-registration/
+    image: user-registration
+    #mem_limit: 2g
+    restart: always
+    network_mode: "host"
+    hostname: localhost
+    ports:
+      - 8090:8090
+    depends_on:
+      config-service:
+        condition: service_healthy
+      eureka-server:
+        condition: service_healthy
+      mongodb:
+        condition: service_healthy
+      kafka:
+        condition: service_healthy
+    healthcheck:
+      test: "exit 0"
+      
+  show-scheduler:
+    build: show-scheduler/
+    image: show-scheduler
+    #mem_limit: 2g
+    restart: always
+    network_mode: "host"
+    hostname: localhost
+    ports:
+      - 8099:8099
+    depends_on:
+      config-service:
+        condition: service_healthy
+      eureka-server:
+        condition: service_healthy
+      mongodb:
+        condition: service_healthy
+      kafka:
+        condition: service_healthy
+    healthcheck:
+      test: "exit 0"
+      
+  
+  recommendation:
+    build: recommendation-service/
+    image: recommendation-service
+    #mem_limit: 2g
+    restart: always
+    network_mode: "host"
+    hostname: localhost
+    ports:
+      - 8098:8098
+    depends_on:
+      config-service:
+        condition: service_healthy
+      eureka-server:
+        condition: service_healthy
+      mongodb:
+        condition: service_healthy
+      kafka:
+        condition: service_healthy
+      neo4j:
+        condition: service_healthy
+    healthcheck:
+      test: "exit 0"
+      
+      
+  email:
+    build: email-service/
+    image: email-service
+    #mem_limit: 2g
+    restart: always
+    network_mode: "host"
+    hostname: localhost
+    ports:
+      - 9000:9000
+    depends_on:
+      config-service:
+        condition: service_healthy
+      eureka-server:
+        condition: service_healthy
+    healthcheck:
+      test: "exit 0"    
+  
+  ticket-engine:
+    build: ticket-engine/
+    image: ticket-engine
+    #mem_limit: 2g
+    restart: always
+    network_mode: "host"
+    hostname: localhost
+    ports:
+      - 9001:9001
+    depends_on:
+      config-service:
+        condition: service_healthy
+      eureka-server:
+        condition: service_healthy
+      redis:
+        condition: service_healthy  
+      kafka:
+        condition: service_healthy
+    healthcheck:
+      test: "exit 0"          
+
+  angular-app:
+    build: Front-end/
+    image: angular
+    restart: always
+    container_name: Angular
+    network_mode: "host"
+    hostname: localhost
+    ports:
+      - 4200:4200
+    healthcheck:
+      test: "exit 0"   

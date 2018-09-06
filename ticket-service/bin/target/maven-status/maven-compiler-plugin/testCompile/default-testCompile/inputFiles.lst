@@ -1,0 +1,3 @@
+/vagrant/boeing-w1-e-play/ticket-service/src/test/java/com/stackroute/eplay/ticketservice/test/controller/TicketEventServiceTest.java
+/vagrant/boeing-w1-e-play/ticket-service/src/test/java/com/stackroute/eplay/ticketservice/test/service/MovieEventServiceTest.java
+/vagrant/boeing-w1-e-play/ticket-service/src/test/java/com/stackroute/eplay/ticketservice/test/service/TicketedEventServiceTest.java

@@ -1,0 +1,38 @@
+<app-nav-bar></app-nav-bar>
+<h2 style="margin-top: 100px">MOVIES</h2>
+<mat-grid-list cols="12" rowHeight="100px" style="margin-bottom:25%">
+    <div *ngIf=" movieList[0]; else elseBlock">
+        <div *ngFor="let movie of movieList;let i=index">
+            <mat-grid-tile colspan="4" rowspan="5">
+                <mat-card class="render1">
+                 <img class="render" mat-card-image src="{{movie.cardPoster}}" alt="movie poster">
+                   <br>{{movie.name}}
+                </mat-card>
+            </mat-grid-tile>
+        </div>
+      
+    </div>
+    <ng-template #elseBlock>
+        <h4 style="margin-top: 75px">No Bookings found!!</h4>
+    </ng-template>
+</mat-grid-list>
+<h2 style="margin-top: 100px">Events</h2>
+<mat-grid-list cols="12" rowHeight="100px">
+    <div *ngIf=" ticketList[0]; else elseBlock">
+        <div *ngFor="let ticket of ticketList;let i=index">
+            <mat-grid-tile colspan="4" rowspan="5">
+                <mat-card class="render1">
+                 <img class="render" mat-card-image src="{{ticket.cardPoster}}" alt="ticket poster">
+                   <br>{{ticket.name}}
+                </mat-card>
+            </mat-grid-tile>
+        </div>
+      
+    </div>
+    <ng-template #elseBlock>
+        <h4 style="margin-bottom: 75px">No Bookings found!!</h4>
+        <div style="height: 50%;margin-bottom: 100px">
+
+        </div>
+    </ng-template>
+</mat-grid-list>

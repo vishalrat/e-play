@@ -1,0 +1,35 @@
+#spring:
+# logging:
+#  file: logs/dev_app.log
+#  pattern:
+#   console: "%d %-5level %logger : %msg%n"
+#   file: "%d %-5level [%thread] %logger : %msg%n"
+#  level:
+#   org.springframework.web: DEBUG
+#   com.stackroute.controllers: DEBUG
+#   org.hibernate: DEBUG
+# cloud:
+#    stream:
+#      kafka:
+#        binder:
+#          brokers: 172.23.238.170:9092
+#      bindings:
+#        movie-event-in:
+#          destination: MovieEvent
+#          contentType: application/json
+#        movie-in:
+#          destination: Movie
+#          contentType: application/json
+## data: 
+##  mongodb:
+##   port: 27017
+##   host: localhost
+##   database: test
+##   uri: mongodb://172.23.238.255:27017/user_movie
+## data:
+##      mongodb:
+##         uri: mongodb://172.23.238.255:27000/test
+#
+#server:
+# port: 8093
+# 

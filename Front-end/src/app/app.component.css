@@ -1,0 +1,38 @@
+/* .image {
+  background-image: url("/assets/images/background1.jpg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+} */
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+.hero {
+  /* Sizing */
+  width: 100vw;
+  height: 100vh;
+  
+  /* Flexbox stuff */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  /* Text styles */
+  text-align: center;
+  color: white; /* ADD THIS LINE */
+  
+  /* Background styles */
+  background-image: url('https://codetheweb.blog/assets/img/posts/full-image-hero/image.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+app-alerts{
+  position: absolute;
+  z-index:1000;
+  width: 100%;
+  top: 50px;
+}

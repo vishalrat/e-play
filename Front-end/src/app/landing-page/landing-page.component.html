@@ -1,0 +1,201 @@
+<!-- <mat-toolbar-row>
+    <span>
+      <mat-card-actions>
+        <button mat-raised-button color="primary" (click)="onclick1()" routerLink="/home" routerLinkActive="active" class="btn btn-primary-outline pull-right"
+          style="margin-left: 8px">
+          delhi</button>
+      </mat-card-actions>
+    </span>
+    <span>
+      <mat-card-actions>
+        <button mat-raised-button color="primary" (click)="onclick2()" routerLink="/home" routerLinkActive="active" class="btn btn-primary-outline pull-right"
+          style="margin-left: 300px">
+          mumbai</button>
+      </mat-card-actions>
+    </span>
+    <span>
+      <mat-card-actions>
+        <button mat-raised-button color="primary" (click)="onclick3()" routerLink="/home" routerLinkActive="active" class="btn btn-primary-outline pull-right"
+          style="margin-left: 300px">
+          bangalore</button>
+      </mat-card-actions>
+    </span>
+    <span>
+      <mat-card-actions>
+        <button mat-raised-button color="primary" (click)="onclick4()" routerLink="/home" routerLinkActive="active" class="btn btn-primary-outline pull-right"
+          style="margin-left: 300px">
+          hyderabad</button>
+      </mat-card-actions>
+    </span>
+  </mat-toolbar-row> -->
+
+
+
+
+
+<!-- <div class="image"> -->
+
+<div class="container-image">
+
+
+  <div class="row" id="features">
+    <div class="container-fluid">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <!-- <div class="modal-header"> -->
+          <!-- <h3><span class="label label-warning" id="qid"></span> Choose your city</h3> -->
+          <!-- </div> -->
+          <div class="modal-body">
+            <div class="col-xs-3 col-xs-offset-5">
+              <div id="loadbar" style="display: none;">
+                <div class="blockG" id="rotateG_01"></div>
+                <div class="blockG" id="rotateG_02"></div>
+                <div class="blockG" id="rotateG_03"></div>
+                <div class="blockG" id="rotateG_04"></div>
+                <div class="blockG" id="rotateG_05"></div>
+                <div class="blockG" id="rotateG_06"></div>
+                <div class="blockG" id="rotateG_07"></div>
+                <div class="blockG" id="rotateG_08"></div>
+              </div>
+            </div>
+
+            <div class="quiz" id="quiz" data-toggle="buttons" >
+              <a (click)="onclick1()" routerLink="/home" routerLinkActive="active">
+                <label class="element-animation1 btn btn-lg btn-secondary btn-block">
+                  <span class="btn-label">
+                    <i class="glyphicon glyphicon-chevron-right"></i>
+                  </span>
+                  <h5>
+                    Delhi
+                  </h5>
+                </label>
+              </a>
+              <a (click)="onclick2()" routerLink="/home" routerLinkActive="active">
+                <label class="element-animation2 btn btn-lg btn-secondary btn-block">
+                  <span class="btn-label">
+                    <i class="glyphicon glyphicon-chevron-right"></i>
+                  </span>
+                  <h5>
+                    Mumbai
+                  </h5>
+                </label>
+              </a>
+              <a (click)="onclick3()" routerLink="/home" routerLinkActive="active">
+                <label class="element-animation3 btn btn-lg btn-secondary btn-block">
+                  <span class="btn-label">
+                    <i class="glyphicon glyphicon-chevron-right"></i>
+                  </span>
+                  <h5>
+                    Bangalore
+                  </h5>
+                </label>
+              </a>
+              <a (click)="onclick4()" routerLink="/home" routerLinkActive="active">
+                <label class="element-animation4 btn btn-lg btn-secondary btn-block">
+                  <span class="btn-label">
+                    <i class="glyphicon glyphicon-chevron-right"></i>
+                  </span>
+                  <h5>
+                    Hyderabad
+                  </h5>
+
+                </label>
+              </a>
+              <a (click)="onclick5()" routerLink="/home" routerLinkActive="active">
+                <label class="element-animation4 btn btn-lg btn-secondary btn-block">
+                  <span class="btn-label">
+                    <i class="glyphicon glyphicon-chevron-right"></i>
+                  </span>
+                  <h5>
+                    Chennai
+                  </h5>
+                </label>
+              </a>
+              <a (click)="onclick6()" routerLink="/home" routerLinkActive="active">
+                <label class="element-animation4 btn btn-lg btn-secondary btn-block">
+                  <span class="btn-label">
+                    <i class="glyphicon glyphicon-chevron-right"></i>
+                  </span>
+                  <h5>
+                    Pune
+                  </h5>
+                </label>
+              </a>
+
+
+
+            </div>
+          </div>
+          <!-- <div class="modal-footer text-muted">
+          <span id="answer"></span>
+        </div> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- <footer>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-sm-2">
+					<h6>Copyright &copy; 2018 </h6>
+				</div>
+			
+				<div class="col-sm-4">
+					<h6>About Us</h6>
+					<p>We are a team of 11 multi-talented professionals dedicated for the development of 
+            a multi-purpose event management application.</p>
+				</div>
+				
+
+				<div class="col-sm-2">
+					<h6>Useful Links</h6>
+					<ul class="unstyled">
+						<li>
+							<a href="">24/7 Customer care</a>
+						</li>
+						<li>
+							<a href="">Resend booking confirmation</a>
+						</li>
+						<li>
+							<a href="">Newsletter</a>
+						</li>
+						<li>
+							<a href="">Movie reviews</a>
+						</li>
+					</ul>
+				</div>
+			
+
+				<div class="col-sm-2">
+					<h6>Follow Us</h6>
+					<ul class="unstyled">
+						<li>
+							<a href="#">Twitter</a>
+							<a href="#" class="fa fa-twitter"></a>
+						</li>
+						<li>
+							<a href="#">Facebook</a>
+							<a href="#" class="fa fa-facebook"></a>
+						</li>
+						<li>
+							<a href="#">Google Plus</a>
+							<a href="#" class="fa fa-google"></a>
+						</li>
+					</ul>
+				</div>
+			
+
+				<div class="col-sm-2">
+					<h6>Coded 
+						<span class="glyphicon glyphicon-heart"></span>by Boeing</h6>
+				</div>
+				
+			</div>
+		
+		</div>
+		
+	</footer> -->
+
+<!-- end features -->
+<!-- </div> -->

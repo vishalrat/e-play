@@ -1,0 +1,33 @@
+#server:
+#  port: 8094
+#spring:
+#  cloud:
+#    stream:
+#      kafka:
+#        binder:
+#          brokers: 13.232.40.6:9092
+#      bindings:
+#        movie-event-out:
+#          destination: MovieEvent
+#          contentType: application/json
+#        RSVP-event-out: 
+#          destination: RSVPEvent
+#          contentType: application/json
+#        ticketed-event-out:
+#          destination: TicketedEvent
+#          contentType: application/json
+#        theatre-out  :
+#          destination: Theatre
+#          contentType: application/json
+#        movie-out    :
+#          destination: Movie
+#          contentType: application/json
+#        show-out:
+#          destination: Show
+#          contentType: application/json
+#        movie-in    :
+#          destination: Movie
+#          contentType: application/json
+#        show-in:
+#          destination: Show
+#          contentType: application/json

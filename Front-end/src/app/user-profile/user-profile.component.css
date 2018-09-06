@@ -1,0 +1,28 @@
+
+
+h4, h2{
+    text-align: left;
+    text-shadow: 1px 1px;
+    padding-bottom: 0;
+    color: black;
+}
+p {
+    margin-top: 50px;
+  }
+  .render1{
+    border-radius: 15px;
+    /* height: 300px;  */
+    /* width: 345px; */
+    overflow: hidden;
+   
+  }
+  .render{
+    width: 300px; 
+    height: 345px;
+  }
+  .mat-figure{
+    border-radius: 15px;
+    /* height: 300px;  */
+    /* width: 345px; */
+    overflow: hidden;
+  }

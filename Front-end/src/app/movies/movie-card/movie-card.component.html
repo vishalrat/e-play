@@ -1,0 +1,14 @@
+<mat-grid-tile colspan="1" rowspan="6">
+    <mat-card class="example-card">
+        <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title>{{movie.title}}</mat-card-title>
+            <mat-card-subtitle>{{movie.year}}</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src={{movie.poster}} alt="Movie Poster">
+
+        <mat-card-actions>
+            <button mat-raised-button (click)="onDelete(movie)" color="warn">Delete</button>
+        </mat-card-actions>
+    </mat-card>
+</mat-grid-tile>

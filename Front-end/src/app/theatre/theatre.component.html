@@ -1,0 +1,35 @@
+<app-nav-bar></app-nav-bar>
+<div class="theatre">
+  <div class="jumbotron">
+    <div class="medium-list">
+      <div class="list-viewer-wrapper">
+        <div class="list-header-title">Theatre</div>
+        <div class="form-container">
+          <mat-form-field>
+            <input matInput placeholder="Enter Theatre Name" [(ngModel)]="theatreModel.theatreName">
+          </mat-form-field>
+          <br>
+          <mat-form-field>
+            <input matInput placeholder="Enter Theatre Location" [(ngModel)]="theatreModel.theatreLocation">
+          </mat-form-field>
+          <br>
+          <mat-form-field>
+            <input matInput placeholder="Enter Theatre Capacity" [(ngModel)]="theatreModel.capacity">
+          </mat-form-field>
+          <br>
+          <mat-form-field>
+            <input matInput placeholder="Enter City" [(ngModel)]="theatreModel.city">
+          </mat-form-field>
+          <br>
+          <!-- <button type="submit" class="example-button" name="button" class="btn btn-success" (click)="onSubmit()" routerLink="/createMovieEvent"
+          routerLinkActive="active">Create Theatre</button> -->
+        </div>
+        <p align="center">
+          <button type="submit" class="example-button" name="button" class="btn btn-secondary" (click)="onSubmit()" routerLink="/createMovieEvent">Create Theatre</button>
+        </p>
+      </div>
+      <div>
+      </div>
+    </div>
+  </div>
+</div>

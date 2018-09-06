@@ -1,0 +1,519 @@
+mat-grid-list {
+    margin-top: 58px;
+  }
+  
+  /* .example-header-image {
+      background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+      background-size: cover;
+    } */
+  
+  footer {
+    /* position: ficlass="example-card"xed; */
+    right: 0;
+    bottom: 0;
+    /* margin-bottom: 0px; */
+    left: 0;
+    padding: 1rem;
+    background: #333;
+    color: #eee;
+    font-size: 11px;
+    /* padding: 20px; */
+    /* background-color: #efefef;
+      text-align: center; */
+  }
+  
+  mat-grid-list {
+    margin-top: 1%;
+  }
+  
+  
+  #container {
+    width: 100%;
+    margin-top: 50px;
+    /* padding-bottom: -50px; */
+    background: transparent;
+  }
+  .items {
+    max-width: 900px;
+    /* max-height:300px; 
+      background: rgb(24, 23, 23); */
+  }
+  .movieposter {
+    /* min-height: auto;
+       max-height: auto; */
+    height: 350px; /* Your height here */
+    width: 900px;
+    margin: auto;
+  
+    /* overflow: hidden; */
+  }
+  .movieposter:hover {
+    transform: scale(1.1, 1.1); /** default is 1, scale it to 1.5 */
+    opacity: 1.2;
+  }
+  /* .render {
+    /* min-height: auto;
+      max-height: auto; */
+    /* height: 300px; /* Your height here */
+    /* width: 345px; */
+    /* overflow: hidden; */
+   
+  /* }  */
+  .render1{
+    border-radius: 15px;
+    /* height: 300px;  */
+    /* width: 345px; */
+    overflow: hidden;
+   
+  }
+  .render{
+    width: 300px; 
+    height: 345px;
+  }
+  
+  #left,
+  #right {
+    margin: 30px;
+    height: 50px;
+    width: 50px;
+    color: aliceblue
+  }
+  
+  /* img{
+      max-width: auto;
+      max-height: auto;
+  } */
+  
+  mat-card {
+    border: 1px solid #999;
+    /* border-radius: 25px; */
+    /* border : 12px dashed #1b1a19; */
+    /* border : 3px dashed #ccc; */
+    /* background: #5bc0de */
+     background: #ffffff; 
+    /* width: auto */
+   }  
+  
+  h3 {
+    text-align: center;
+    /* text-shadow: 2px 2px; */
+    /* padding-bottom: 0; */
+    color: rgb(127, 130, 133);
+    /* margin-top: 1%; */
+  }
+  h2 {
+    text-align: center;
+    text-shadow: 1px 1px;
+    padding-bottom: 0;
+    color: white;
+    margin-top: 0%;
+    /* text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF; */
+  }
+  h1 {
+    font-family: "Anton", sans-serif;
+    font-family: "Lobster", cursive;
+  }
+  h5 {
+    text-align: center;
+    /* text-shadow: 2px 2px; */
+    text-shadow: 2px 8px 6px rgba(245, 216, 216, 0.2),
+      0px -5px 35px rgba(255, 255, 255, 0.3);
+  }
+  /* .example-card {
+      max-width: 400px;
+    } */
+  
+  .example-header-image {
+    /* align-content: flex-start; */
+    background-image: url("https://material.angular.io/assets/img/examples/shiba1.jpg");
+    background-size: cover;
+  }
+  
+  mat-grid-tile {
+    margin-top: 0;
+    width: 100px;
+  }
+  
+  mat-grid-list {
+    grid-gap: 5px;
+  }
+  
+  div ng2-carouselamos {
+    background: transparent;
+  }
+  
+  .movieCard {
+    margin-top: -2%;
+  }
+  
+  .split {
+    height: 100%;
+    width: 88%;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    margin-top: 3%;
+    /* overflow-x: hidden; */
+    /* padding-top: 20px; */
+  }
+  
+  .right {
+    right: 0;
+    /* background-color: red; */
+  }
+  
+  .bgimage {
+    width: 100%;
+    height: 500px;
+    background: url("https://images.wallpaperscraft.com/image/film_negative_glare_123282_3840x2400.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    /* background-attachment: fixed; */
+  }
+  .bgimage h5 {
+    margin-top: 50px;
+    color: white;
+    text-shadow: 2px 2px #333;
+  }
+  p {
+    margin-top: 50px;
+  }
+  .hero {
+    /* Sizing */
+    width: 100%;
+    height: 100vh;
+  
+    /* Flexbox stuff */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    /* Text styles */
+    text-align: center;
+    color: white;
+  
+    /* Background styles */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url("/assets/images/Heroimage.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+  
+  .homepage{
+    /* background: url("http://getwallpapers.com/wallpaper/full/9/0/9/994206-free-large-background-images-2560x1440.jpg"); */
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+  /* 
+  .example-card{
+    border-radius: 25px;
+    border: 1px solid #999;
+    background: #33b5e5;
+  } */
+  
+
+/* .img {
+    width: 100%;
+    margin-bottom: 18%;
+  }
+  .card-picture {
+    width: 23%;
+    margin-bottom: 2%;
+  }
+  .container {
+    min-height: 100%;
+    width: 100%;
+  }
+  .search-form {
+    width: 90%;
+  }
+   */
+
+/* .navbarSection {
+  margin: auto;
+} */
+/* header{
+  height: 58px;
+} */
+mat-checkbox{
+    margin-left: 10px
+  }
+  .a{
+    font-family: "Anton", sans-serif;
+    /* font-family: "Lobster", cursive; */
+  }
+  
+  .navbar {
+    background: -webkit-linear-gradient(top,  #5e635e 0,#0e0e0e 100%); /* Chrome10+,Safari5.1+ */
+    height: 50px;
+    /* padding-bottom: 0px */
+  }
+   /* .navbar ul {
+     list-style: none;
+     padding: 0;
+     margin: 0;
+     background: transparent;
+     overflow: hidden;
+   }
+   .navbar li a {
+     float: left;
+     line-height: 50px;
+     padding: 0 20px;
+     text-decoration: none;
+     color: #ddd;
+   } */
+   .navbar li a:hover {
+     background-color: rgb(51, 51, 51);
+     color: #fff;
+   }
+  .navbar-brand{
+    /* font-family: 'Anton', sans-serif;
+    font-family: 'Lobster', cursive;
+    font-family: 'Righteous', cursive;
+    font-family: 'Monoton', cursive; */
+    font-family: 'Merienda', cursive;
+  }
+  .menuToggle{
+    background-color :#d2e6e9;
+    /* width: 150px;   */
+  }
+  .menuT{
+    margin-top: 100px;
+    background-color :#941374;
+  }
+  /* .dropdown-item{
+    color: #f3f3ef;
+  } */
+  .flex-container {
+    background-color: #050644;
+    color: #f3f3ef;
+    /* background-color:#5f4c4c; */
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: center;
+    /* height: 75px; */
+    /* z-index: -1000; */
+  }
+  /* .dropdown-menu{
+    background-color: #45454e;
+    color: #000000;
+  } */
+  li p .btn {
+    margin-top: 2.5px;
+  }
+  .btn{
+    margin-left: 10px;
+  }
+  
+  .column {
+    flex: 30%;
+    max-width: 30%;
+    margin: 27px;
+    /* margin-top: 20px; */
+  }
+  /* .image{
+    background-image: url("eplayLogo.jpeg");
+  
+  } */
+  
+  /* .example-button{
+    margin-top: -2px;
+  } */
+  /* Responsive layout - makes a two column-layout instead of four columns */
+  @media (max-width: 800px) {
+    .column {
+      flex: 40%;
+      max-width: 40%;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .column {
+      flex: 40%;
+      max-width: 40%;
+    }
+  }
+  
+  .mat{
+    margin-top: 75px;
+  }
+  
+  /* carousel */
+  
+  mat-menu{
+    margin-top: 45px important!;
+  }
+  
+  .seminor-login-modal-body .close{
+    position: relative;
+    top: -45px;
+    left: 10px;
+   color: #1cd8ad;
+   }
+   .seminor-login-modal-body .close{
+       opacity:0.75;
+   }
+   
+   .seminor-login-modal-body .close:focus, .seminor-login-modal-body .close:hover {
+       color: #39e8b0;
+    opacity: 1;
+    text-decoration: none;
+    outline:0;
+   }
+   
+   .seminor-login-modal .modal-dialog .modal-content{
+       border-radius:0px;
+   }
+   
+   /* form animation */
+   .seminor-login-form .form-group {
+     position: relative;
+     margin-bottom: 1.5em !important;
+   }
+   .seminor-login-form .form-control{
+    border: 0px solid #ced4da !important;
+    border-bottom:1px solid #adadad !important;
+    border-radius:0 !important;
+   }
+   .seminor-login-form .form-control:focus, .seminor-login-form .form-control:active{
+    outline:none !important;
+    outline-width: 0;
+    border-color: #adadad !important;
+    box-shadow: 0 0 0 0.2rem transparent;
+   }
+   *:focus {
+    outline: none;
+   }
+   .seminor-login-form{
+    padding: 2em 0 0;
+   }
+   
+   .form-control-placeholder {
+   position: absolute;
+   top: 0;
+   padding: 7px 0 0 13px;
+   transition: all 200ms;
+   opacity: 0.5;
+   border-top: 0px;
+   border-left: 0;
+   border-right: 0;
+   }
+   
+   .form-control:focus + .form-control-placeholder,
+   .form-control:valid + .form-control-placeholder {
+   font-size: 75%;
+   -webkit-transform: translate3d(0, -100%, 0);
+          transform: translate3d(0, -100%, 0);
+   opacity: 1;
+   }
+   
+   .container-checkbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+   }
+   .checkmark-box {
+    position: absolute;
+    top: -5px;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #adadad;
+   }
+   .container-checkbox {
+    display: block;
+    position: relative;
+    padding-left: 40px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    line-height: 1.1;
+   }
+   .container-checkbox input:checked ~ .checkmark-box:after {
+    color: #fff;
+   }
+   .container-checkbox input:checked ~ .checkmark-box:after {
+    display: block;
+   }
+   .container-checkbox .checkmark-box:after {
+    left: 10px;
+    top: 4px;
+    width: 7px;
+    height: 15px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+   }
+   .checkmark:after, .checkmark-box:after {
+    content: "";
+    position: absolute;
+    display: none;
+   }
+   .container-checkbox input:checked ~ .checkmark-box {
+    background-color: #f58220;
+    border: 0px solid transparent;
+   }
+   .btn-check-log .btn-check-login {
+    font-size: 16px;
+    padding: 10px 0;
+   }
+   button.btn-check-login:hover {
+       color: #fff;
+       background-color: #f58220;
+       border: 2px solid #f58220;
+   }
+   .btn-check-login {
+    color: #f58220;
+    background-color: transparent;
+    border: 2px solid #f58220;
+    transition: all ease-in-out .3s;
+   }
+   .btn-check-login {
+    display: inline-block;
+    padding: 12px 0;
+    margin-bottom: 0;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border-radius: 0;
+    width: 100%;
+   }
+   .forgot-pass-fau a {
+       text-decoration: none !important;
+       font-size: 14px;
+   }
+   .text-primary-fau {
+       color: #1959a2;
+   }
+   
+   .select-form-control-placeholder{
+     font-size: 100%;
+       padding: 7px 0 0 13px;
+       margin: 0;
+   }
+   
+   .menuToggle{
+     margin-top: 50px
+   }  

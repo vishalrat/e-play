@@ -1,0 +1,87 @@
+/* .mat-card-image {
+  height: 400px;
+  width: 350px;
+} */
+/* .row{
+  margin-bottom: 5%;
+  width: 100%
+} */
+.render1{
+  border-radius: 15px;
+  /* height: 300px;  */
+  /* width: 345px; */
+  overflow: hidden;
+  width: 370px; 
+  
+ 
+}
+.render{
+  width: 370px; 
+  height: 320px;
+}
+
+.eventtype{
+  /* background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTH9Ek_k3Fi609lW2xADg_FJbfyoMqZcnuakf8uFDWf1Xxd25yN");  */
+  background-image: url("/assets/images/eventType.crdownload");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+mat-grid-list {
+  margin-top: 50px;
+}
+mat-card {
+  box-shadow: 5px 5px 0 #3d3a3a;
+  width: 90%;
+  border: 2px solid rgb(248, 244, 244);
+  border-radius: 25px;
+  /* border : 12px dashed #1b1a19; */
+  /* border : 3px dashed #ccc; */
+  /* background: #5bc0de */
+  background: -webkit-linear-gradient(top,  #5e635e 0,#0e0e0e 100%);
+  /* width: auto */
+}
+
+h5{
+  font-family: "Anton", sans-serif;
+  /* font-family: "Lobster", cursive; */
+}
+/* .card-picture {
+  width: 23%;
+  margin-bottom: 2%;
+  
+
+} */
+/* .example-card{
+  background: url("/assets/images/background3.jpg") no-repeat center center; 
+} */
+
+.container {
+  min-height: 100%;
+  width: 100%;
+}
+.search-form {
+  width: 90%;
+}
+
+.flex-container {
+  /* background-color: #008b8b;
+  color: #f3f3ef; */
+  /* background-color:#5f4c4c; */
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: center;
+  /* height: 75px; */
+}
+/* 
+#features {
+  margin-top: 75px;
+  text-align: center;
+}
+
+#features img {
+  margin :0 0 20px;
+  height: 250px;
+  width: 300px;
+} */

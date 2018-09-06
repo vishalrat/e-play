@@ -1,0 +1,66 @@
+<app-nav-bar></app-nav-bar>
+ <div class="w3-container">
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+<table align="center" class="w3-table w3-bordered" >
+  <thead>
+    <tr align="center">
+       <th>S. No</th> 
+      <th> Invitee name</th>
+      <th>Invitee Email</th>
+      <th>Status</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+      
+        <tr align="center" *ngFor="let name of rsvpModel.rsvpInvitation">
+           <td class="counterCell"></td> 
+          <td> {{name.inviteeName}} </td>
+          <td> {{name.inviteeEmail}} </td>
+          
+          <td *ngIf="name.status!=false;else elseBlock"> Attending</td>
+          <ng-template #elseBlock>
+           <td> Not attending </td>
+          </ng-template>
+        </tr>
+      
+  </tbody>
+</table>
+
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+
+<!-- <h4>Click here to view Invitation page</h4>
+<button type="submit" class="example-button" name="button" class="btn btn-success" class="button" (click)="onSubmit1()" >My RSVP Invitation </button>  
+<br>
+<br>
+<h4>Click here add more invitee</h4>
+<button type="submit" class="example-button" name="button" class="btn btn-success" class="button" (click)="onSubmit2()" routerLink="/rsvpInvitation">Add more invitees </button>   -->
+</div>

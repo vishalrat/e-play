@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="./assets/socket.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="/webjars/jquery/jquery.min.js"></script>
+    <script src="/webjars/sockjs-client/sockjs.min.js"></script>
+    <script src="/webjars/stomp-websocket/stomp.min.js"></script>
+  </head>
+
+  <body>
+    <app-nav-bar></app-nav-bar>     
+    <div class="name">
+      <h2>Theatre Layout</h2>
+    </div>
+    <hr>
+    <div class="ArenaLayout" >
+      <div class="rows" *ngFor= "let row of totalRow" >
+        <div class="columns" *ngFor= "let col of totalCol">
+         <div *ngIf="col!=passage[0] && col!=passage[1] && row!=rowPassage; else Passage">
+           <div  *ngIf="seatStatus(row,col); else SeatAvailable">
+             <div id = {{row}}{{col}} *ngIf="seatBook(row,col); else SeatBlocked" class="seat booked">
+                <!-- {{row}}{{col}} -->
+             </div>
+              <ng-template #SeatBlocked>
+                <div id = {{row}}{{col}} class="seat blocked">
+                  <!-- {{row}}{{col}} -->
+                </div>
+              </ng-template>
+           </div>
+              <ng-template #SeatAvailable>
+                <div id={{row}}{{col}} class="seat available" (click)="onclick(row,col)">
+                  <!-- {{row}}{{col}} -->
+                </div>
+              </ng-template>
+          </div>
+          <ng-template #Passage>
+            <div class=" seatPassage passage"></div>
+          </ng-template>
+        </div>
+      </div>
+    </div>
+    <div class="screen">
+        Screen this way
+    </div>
+    <div *ngIf="seatSelected(); else disableButton" class="bookButton">
+        <button mat-raised-button color="primary" routerLink="/payment" routerLinkActive="active" (click)="bookticket()">Proceed</button>
+    </div>
+    <ng-template #disableButton>
+        <button style="margin:0 auto; display: block; margin-bottom: .5%;" mat-raised-button disabled color="primary">Proceed</button>
+    </ng-template>
+  </body>
+</html>

@@ -1,0 +1,100 @@
+<html>
+  <body>
+<app-nav-bar></app-nav-bar>
+<div>
+    <p style="margin-top: 100px;margin-bottom: -130px; margin-left: 318px; font-size: 28px;">  Grab a Bite! </p>
+</div>
+<!-- 
+<button mat-raised-button style="margin-top: 100px" (click)="onClickSuccess()" >Payment done</button>
+<button mat-raised-button style="margin-top: 100px" (click)="onClickFail()" >Failed</button>
+<div *ngIf="!user">
+  <form class="form-inline">
+    <input type="text" class="form-control" id="searchbar" [(ngModel)]="emailId" [ngModelOptions]="{standalone: true}">
+  </form>
+</div> -->
+  <div class="payment">
+    <mat-grid-list cols="5" rowHeight="100px">
+      <mat-grid-tile *ngFor="let tile of tiles" [colspan]="tile.cols" [rowspan]="tile.rows" [style.background]="tile.color">
+        <div *ngIf="tile.cols==1.8; else elseBlock">
+          <div class="scroll-on-content-add">
+            <div class="summary">
+              Your Booking Summary:
+            </div>
+            <div class="details-display">
+              <p> <b>Seats Selected: </b> {{paymentStatus.seats}} ({{noSeats}} seats)</p>
+              <p> <b>Ticket Price: </b>{{price}}</p>
+              <p> <b>Taxes:</b> {{tax}} </p>
+              <hr>
+              <p> <b>Sub Total:</b> {{subTotal}} </p>
+              <p *ngIf="items.length >0">Items Added:</p>
+              <div *ngFor="let item of items; index as i">
+                <div *ngIf="item.count > 0">
+                  {{item.text}}
+                  <span (click)="minusItem(i,item.count)">
+                    <mat-icon>remove</mat-icon>
+                  </span>
+                  {{item.count}}
+                  <span (click)="addItem(i,item.count)">
+                    <mat-icon>add</mat-icon>
+                  </span>
+
+                  <span (click)="deleteItem(i,tile.text)">
+                    <mat-icon>delete</mat-icon>
+                  </span>
+                </div>
+              </div>
+              <br>
+              <p><b style="color: brown">Food & Beverage:</b> {{food}}</p>
+              <hr>
+              <p> <b style="color: brown">Amount Payable:</b> {{totalAmount}} </p>
+              <hr>
+              <div style="color:red; margin-left: 170px;" *ngIf="!clicked">
+                Hurry up..  : {{timer}}
+              </div>
+            </div>
+            <div class="booking-button">
+
+              <div *ngIf="!user && !clicked && !flag">
+                <form class="form-inline">
+                  <input style="margin-left: 122px; margin-top: 10px;" type="text" placeholder="Enter your Email Id" class="form-control" id="searchbar" [(ngModel)]="emailId" [ngModelOptions]="{standalone: true}">
+                </form>
+              </div>
+
+              <p *ngIf="!flag  && !clicked; else disabledButton" style="margin-left: 160px;">
+                <button style="margin-top: 12px;" class="btn btn-primary mat-raised-button" (click)="openCheckout()">Complete Payment</button>
+                <ng-template #disabledButton>
+                  <button class="btn btn-primary disabled mat-raised-button" (click)="openCheckout()">Complete Payment</button>
+                </ng-template>
+              </p>
+              <!-- <p *ngIf="!flag; else disabledButton">
+                <button style="margin-top: -5px;" class="btn btn-primary mat-raised-button" (click)="onClickFail()">Fail Payment</button>
+                <ng-template #disabledButton>
+                  <button class="btn btn-primary mat-raised-button" (click)="onClickFail()">Fail Payment</button>
+                </ng-template>
+              </p> -->
+
+            </div>
+          </div>
+        </div>
+        <ng-template #elseBlock>
+          <div class="offers-card">
+            <mat-card class="example-card">
+              <img class="render" mat-card-image src="{{tile.poster}}" alt="poster">
+              <mat-card-actions>
+
+                <p id="text">{{tile.text}}</p>
+                <p id="price">₹{{tile.price}}</p>
+
+
+                <button class="btn btn-info add-button" mat-button mat-raised-button (click)="itemsAdded(tile)" aria-required="true">ADD</button>
+
+              </mat-card-actions>
+            </mat-card>
+          </div>
+        </ng-template>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+</body>
+
+</html>

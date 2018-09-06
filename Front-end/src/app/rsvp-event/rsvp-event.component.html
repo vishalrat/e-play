@@ -1,0 +1,82 @@
+<app-nav-bar></app-nav-bar>
+<div class="rsvpevent">
+  <div class="jumbotron">
+    <div class="medium-list">
+      <div class="list-viewer-wrapper">
+        <div class="list-header-title">RSVP Event</div>
+        <form [formGroup]="rsvpForm">
+        <div class="form-container">
+          <mat-form-field>
+            <input id="name"  matInput formControlName="name" placeholder="Event Name" [(ngModel)]="rsvpModel.name" required>
+          </mat-form-field>
+
+          <!-- <mat-form-field>
+          <input matInput [matDatepicker]="picker" placeholder="Choose start date" [(ngModel)]="rsvpModel.startDate">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field> -->
+
+         
+
+          <mat-form-field>
+              <input id="startDate"  matInput formControlName="startDate" [(ngModel)]="rsvpModel.startDate" placeholder="Choose a starting date" 
+              [owlDateTimeTrigger]="picker" [owlDateTime]="picker" required/>
+              <owl-date-time #picker></owl-date-time>
+            </mat-form-field>
+
+
+          <!-- <mat-form-field>
+          <input matInput =placeholder="startTime" [(ngModel)]="rsvpModel.startTime">
+      </mat-form-field> -->
+
+
+
+
+          <!-- <mat-form-field>
+          <input matInput [matDatepicker]="picker2" placeholder="Choose end date" [(ngModel)]="rsvpModel.endDate">
+          <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+          <mat-datepicker #picker2></mat-datepicker>
+        </mat-form-field> -->
+
+          <!-- <mat-form-field>
+          <input matInput placeholder="endTime" [(ngModel)]="rsvpModel.endTime">
+        </mat-form-field> -->
+
+          <mat-form-field>
+            <input id="city"  matInput formControlName="city" placeholder="Venue" [(ngModel)]="rsvpModel.city" required>
+          </mat-form-field>
+
+          <!-- <mat-form-field>
+          <input matInput placeholder="location" [(ngModel)]="rsvpModel.location" required>
+        </mat-form-field> -->
+
+          <mat-form-field>
+            <input id="poster"  matInput formControlName="poster" placeholder="Poster" [(ngModel)]="rsvpModel.poster" required>
+          </mat-form-field>
+
+          <mat-form-field>
+            <input id="description"  matInput formControlName="description" placeholder="Description" [(ngModel)]="rsvpModel.description" required>
+          </mat-form-field>
+          <!-- <mat-form-field>
+          <input matInput placeholder="performers" [(ngModel)]="rsvpModel.performers">
+        </mat-form-field> -->
+
+          <!-- <mat-form-field>
+          <input matInput placeholder="terms and Conditions" [(ngModel)]="rsvpModel.termsAndConditions">
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput placeholder="notes" [(ngModel)]="rsvpModel.notes">
+        </mat-form-field> -->
+          <!-- <button type="submit" class="example-button" name="button" class="btn btn-success" class="button" 
+          (click)="onSubmit()">Create RSVP Event</button> -->
+
+
+          <p align="center">
+              <button  type="submit" class="button" name="button" class="btn btn-secondary"  [disabled]="!rsvpForm.valid" (click)="onSubmit()">Create RSVP Event</button>
+            </p>
+      </div>
+     </form>
+    </div>
+  </div>
+</div> 

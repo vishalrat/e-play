@@ -1,0 +1,11 @@
+.render1{
+    border-radius: 15px;
+    /* height: 300px;  */
+    /* width: 345px; */
+    overflow: hidden;
+   
+  }
+  .render{
+    width: 300px; 
+    height: 345px;
+  }

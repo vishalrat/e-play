@@ -1,0 +1,78 @@
+<!-- <img  mat-card-image src="{{rsvpModel.poster}}" alt="rsvp poster"> -->
+<!-- <div class="container" > -->
+<!-- <div class="container" layout-fill layout="column" layout-align="center none">
+  
+      <div layout="row" layout-align="center none"> -->
+
+  <div class="poster">
+    <img src="{{rsvpModel.poster}}">
+  </div>
+  
+  <div class="imageClass">
+  <br>
+  <mat-card>
+      
+     
+
+    <h2>
+      {{rsvpModel.name}}
+    </h2>
+    <h4>
+      Description:  {{rsvpModel.description}}
+      </h4>
+      <br>
+    
+
+    <h4>
+       Venue: {{rsvpModel.city}}
+    </h4>
+    <h4>
+      Start Date: {{rsvpModel.startDate|date}} at start time {{rsvpModel.startDate|date:"HH:mm"}}
+    </h4>
+    
+
+
+  
+    
+
+   
+
+    <mat-form-field>
+      <textarea matInput placeholder="Your name" [(ngModel)]="rsvpInvitationModel.inviteeName" ngModel #inviteeName="ngModel" required
+        pattern="[a-zA-Z][a-zA-Z]+"></textarea>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <textarea matInput placeholder=" Email id" [(ngModel)]="rsvpInvitationModel.inviteeEmail" ngModel #inviteeEmail="ngModel"
+        required pattern="^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$"></textarea>
+    </mat-form-field>
+
+    <h4>
+      Are you attending?
+
+    </h4>
+
+    <!-- <input type="radio" value="male" name="gender" ngModel> Male
+  <input type="radio" value="female" name="gender" ngModel> Female -->
+
+    <form action="">
+      <input type="radio" id="t-option" name="selector" value=true name="Status" [(ngModel)]="rsvpInvitationModel.Status" (click)="changeStatus(true)"
+        ngModel #status="ngModel">I am attending
+      <br>
+      <input type="radio" id="t-option" name="selector" value=false name="Status" [(ngModel)]="rsvpInvitationModel.Status" ngModel
+        #status="ngModel">I am not attending
+      <br>
+      <br>
+    </form>
+
+    <button type="submit" name="button" class="btn btn-secondary" (click)="onSubmit()">submit </button>
+
+    <!-- </div> -->
+  </mat-card>
+  <br>
+  <br>
+</div>
+
+
+<!-- </div>
+</div> -->

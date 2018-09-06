@@ -1,0 +1,51 @@
+<!-- <app-nav-bar></app-nav-bar> -->
+<app-nav-bar></app-nav-bar>
+<div class="jumbotron">
+ <div class="medium-list">
+   <div class="list-viewer-wrapper">
+     <div class="list-header-title">RSVP Add invitations and send invitations</div>
+     <form [formGroup]="invitationForm">
+     <div class="form-container">
+
+ <mat-form-field>
+   <input id="inviteeName" matInput formControlName="inviteeName" placeholder="Invitee name" [(ngModel)]="rsvpInvitationModel.inviteeName" 
+     required pattern="[a-zA-Z][a-zA-Z]+">
+ </mat-form-field>
+
+ <mat-form-field>
+   <input id="inviteeEmail" matInput formControlName="inviteeEmail" placeholder="Invitee Email id" [(ngModel)]="rsvpInvitationModel.inviteeEmail" 
+     required pattern="^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$">
+ </mat-form-field>
+ <!-- pattern="^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$"></textarea>
+ -->
+ <!-- <div *ngIf="emailUser.touched" class="alert alert-danger">
+   <div *ngIf="emailUser.errors?.required">
+     please enter fullname
+   </div>
+ </div> -->
+
+ <mat-form-field>
+   <input id="inviteePhoneNo" matInput formControlName="inviteePhoneNo" placeholder="Phone no" [(ngModel)]="rsvpInvitationModel.inviteePhoneNo" 
+     required pattern="^[2-9]{2}[0-9]{8}$">
+ </mat-form-field>
+
+ <p align="center">
+
+   <button type="submit" class="button"  name="button" class="btn btn-secondary" [disabled]="!invitationForm.valid" (click)="onSubmit()" >Save Invitation</button>
+   &nbsp; &nbsp;<!-- <div class="divider"/> -->
+     <button type="submit" class="button" name="button" class="btn btn-secondary" (click)="onSubmit2()" >Send Invitation </button>
+   <br>
+   </p>
+
+   <!-- <button  type="submit" class="button" name="button" class="btn btn-secondary"  (click)="onSubmit()">Create RSVP Event</button> -->
+
+
+
+</div>
+</form>
+</div>
+</div>
+</div>
+<br>
+<br>
+<br>

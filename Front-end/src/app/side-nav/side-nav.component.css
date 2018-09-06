@@ -1,0 +1,95 @@
+body {
+  margin: 0;
+  font-family: arial;
+}
+
+#toggle {
+  /* float: left; */
+  display: none;
+}
+
+.leftbar {
+  position: absolute;
+  width: 30%;
+  height: 100%;
+  background-color: #2c3e50;
+  box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.5);
+  left: -32%;
+  /* for sidebar to stay on top */
+  z-index: 1;
+  transition: left 0.5s ease-in-out;
+}
+
+.exit {
+  cursor: pointer;
+  font-weight: 800;
+  color: rgb(163, 140, 140);
+  float: right;
+  padding: 1.1rem;
+}
+
+.content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: background-color 0.5s ease-in-out;
+}
+
+.button {
+  position: absolute;
+  cursor: pointer;
+  font-weight: 800;
+  color: black;
+  font-size: 40px;
+  padding: 20px 50px;
+}
+
+.content p {
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 20%;
+  font-size: 50px;
+}
+
+#toggle:checked ~ .leftbar {
+  left: 0;
+}
+
+#toggle:checked ~ .content {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.example-h2 {
+  margin: 10px;
+  color: white;
+}
+
+.example-section {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  height: 60px;
+  color: white;
+}
+
+.example-margin {
+  margin: 0 10px;
+}
+
+.flex-container {
+   /* background-color: #008b8b;  */
+    /* color: #414135;  */
+  /* background-color:#5f4c4c; */
+  color: #26ccb3;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: center;
+  /* height: 75px; */
+}
+
+/* app-multiple-checkboxes {
+  background-color: rgb(57, 77, 77) important!;
+} */
+
+

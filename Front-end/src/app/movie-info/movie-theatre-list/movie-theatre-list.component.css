@@ -1,0 +1,50 @@
+.theatre-name{
+    width: 30%;
+    position: relative;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', 'Arial', 'sans-serif';
+    font-size: 20px;
+    /* background: transparent; */
+    float: left;
+    margin-top: 1px;
+    color:Black;
+    font-size: 30px;
+    border-radius: 10px;
+}
+
+.theatre-container{
+    width: 80%;
+    margin-left: 10%;
+    height: auto;
+    margin-top:5px;
+    display: table;
+    background-color:  rgb(245, 245, 214);
+
+}
+.show-time{
+    width: 70%;
+    height: 100%;
+    margin-top: 1px;
+    font-family: 'Courier New', Courier, monospace;
+    float: right;
+    padding-top: 7px;
+    padding-left: 7px;
+    padding-bottom: 7px;
+}
+
+.mat-raised-button{
+    margin-right: 10px;
+}
+
+.theatre-name a{
+    display: block;
+    font-size: 15px;
+    align-self: center;
+    margin: 0 auto;
+    margin-top: 7px;
+}
+
+.show-time button {
+    margin-right: 30px;
+    margin-left: 10px;
+    margin-top:3px; 
+}
